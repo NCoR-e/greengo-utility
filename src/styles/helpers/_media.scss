@@ -1,0 +1,57 @@
+@use 'functions' as *;
+
+$mobile-xs: 20.06125em;   // 320.98px
+$mobile: 47.99875em;   // 767.98px
+$tablet: 63.99875em;   // 1023.98px
+$laptop: 90.06125em;   // 1440.98px
+$desktop-xl: 120.06125em; // 1920.98px
+
+// Только в рамках 320.98px
+@mixin mobile-xs {
+  @media (max-width: $mobile-xs) { @content; }
+}
+
+// От 320.98px до 767.98px
+@mixin mobile-above {
+  @media (min-width: $mobile-xs) and (max-width: $mobile) { @content; }
+}
+
+// Только диапазон 767.98px (фикс.точка)
+@mixin mobile {
+  @media (min-width: $mobile) and (max-width: $mobile) { @content; }
+}
+
+// От 767.98px до 1023.98px
+@mixin tablet-above {
+  @media (min-width: $mobile) and (max-width: $tablet) { @content; }
+}
+
+// Только диапазон 1023.98px (фикс.точка)
+@mixin tablet {
+  @media (min-width: $tablet) and (max-width: $tablet) { @content; }
+}
+
+// От 1023.98px до 1440.98px
+@mixin laptop-above {
+  @media (min-width: $tablet) and (max-width: $laptop) { @content; }
+}
+
+// Только диапазон 1440.98px (фикс.точка)
+@mixin laptop {
+  @media (min-width: $laptop) and (max-width: $laptop) { @content; }
+}
+
+// От 1440.98px до 1920.98px
+@mixin desktop-xl-above {
+  @media (min-width: $laptop) and (max-width: $desktop-xl) { @content; }
+}
+
+// Только диапазон 1920.98px (фикс.точка)
+@mixin desktop-xl {
+  @media (min-width: $desktop-xl) and (max-width: $desktop-xl) { @content; }
+}
+
+// Всё, что выше 1920.98px
+@mixin ultra-wilde {
+  @media (min-width: $desktop-xl) { @content; }
+}

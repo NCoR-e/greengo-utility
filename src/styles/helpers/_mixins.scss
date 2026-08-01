@@ -1,0 +1,22 @@
+@use 'sass:math';
+@use 'media' as *;
+@use 'functions' as *;
+
+@mixin flex ($display, $justify, $algin) {
+    display: $display;
+    justify-content: $justify;
+    align-items: $algin;
+}
+
+@mixin one-size ($size) {
+    width: $size;
+    height: $size;
+}
+
+@mixin border-pack ($size, $type, $color) {
+    border: $size, $type, $color;
+}
+
+@mixin fluid-text($max: 28, $min: 14) {
+    font-size: fluid($max, $min);
+}
