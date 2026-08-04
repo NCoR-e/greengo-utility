@@ -1,5 +1,11 @@
+html {
+  scrollbar-color: rgb(30, 42, 54) transparent;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+}
+
 *,
-::before,
+::before, 
 ::after {
   margin: 0;
   padding: 0;

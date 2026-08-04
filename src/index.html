@@ -22,7 +22,7 @@
         <article class="branch__card card card--main" tabindex="0">
           <div class="card__header">
             <div class="card__title">
-              <h3 class="card__country-code"><b>CH</b> Швейцария</h3>
+              <h3 class="card__country-code">CH Швейцария</h3>
             </div>
 
             <svg class="card__icon" aria-hidden="true">
@@ -63,7 +63,7 @@
         <article class="branch__card card card--main" tabindex="0">
           <div class="card__header">
             <div class="card__title">
-              <h3 class="card__country-code"><b>SE</b> Швеция</h3>
+              <h3 class="card__country-code">SE Швеция</h3>
             </div>
 
             <svg class="card__icon" aria-hidden="true">
@@ -83,7 +83,7 @@
           <footer class="card__footer">
             <details class="card__setting setting">
               <summary class="setting__header" aria-label="Меню редактирования карточки">
-               <svg class="setting__icon setting__icon--menu" aria-hidden="true">
+                <svg class="setting__icon setting__icon--menu" aria-hidden="true">
                   <use href="/sprites.svg#menu-ico"></use>
                 </svg>
 
@@ -104,7 +104,7 @@
         <article class="branch__card card card--main" tabindex="0">
           <div class="card__header">
             <div class="card__title">
-              <h3 class="card__country-code"><b>US</b> США</h3>
+              <h3 class="card__country-code">US США</h3>
             </div>
 
             <svg class="card__icon" aria-hidden="true">
@@ -145,7 +145,7 @@
         <article class="branch__card card card--test" tabindex="0">
           <div class="card__header">
             <div class="card__title">
-              <h3 class="card__country-code"><b>CH</b> Тестовая Швейцария</h3>
+              <h3 class="card__country-code">CH Тестовая Швейцария</h3>
               <div class="card__description">
                 <svg class="card__icon" aria-hidden="true">
                   <use href="/sprites.svg#flag-ch"></use>
@@ -179,6 +179,238 @@
         </article>
       </div>
     </section>
+
+    <dialog class="modal modal--auto" aria-label="Изменить данные автоматически" data-modal-auto>
+      <form class="modal__form" method="dialog">
+        <h4 class="modal__title">Изменить данные автоматически</h4>
+
+        <div class="modal__wrapper">
+          <div class="modal__field">
+            <label class="modal__label" for="panel-url">Укажите ссылку на 3x-ui панель</label>
+            <input class="modal__input" id="panel-url" type="url" autocomplete="off" placeholder=" " required>
+          </div>
+        </div>
+
+        <div class="modal__actions">
+          <button class="modal__button modal__button--cancel" type="button" data-modal-close>Отменить</button>
+          <button class="modal__button modal__button--confirm" type="submit" data-modal-confirm>Сохранить</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog class="modal modal--manual" aria-label="Изменить данные вручную" data-modal-manual>
+      <form class="modal__form" method="dialog">
+        <h4 class="modal__title">Изменить данные вручную</h4>
+
+        <div class="modal__wrapper">
+          <div class="modal__field">
+            <label class="modal__label" for="country-code">Код страны в ISO-3166</label>
+            <input class="modal__input" id="country-code" type="text" autocomplete="off" placeholder=" " required>
+          </div>
+
+          <div class="modal__field">
+            <label class="modal__label" for="country-name">Название страны</label>
+            <input class="modal__input" id="country-name" type="text" autocomplete="off" placeholder=" " required>
+          </div>
+
+          <div class="modal__field">
+            <label class="modal__label" for="host">Хост</label>
+            <input class="modal__input" id="host" type="text" placeholder=" " required>
+          </div>
+
+          <div class="modal__field">
+            <label class="modal__label" for="port">Порт</label>
+            <input class="modal__input" id="port" type="number" min="1" max="65535" placeholder=" " required>
+          </div>
+        </div>
+
+        <div class="modal__actions">
+          <button class="modal__button modal__button--cancel" type="button" data-modal-close>Отменить</button>
+          <button class="modal__button modal__button--confirm" type="submit" data-modal-confirm>Сохранить</button>
+        </div>
+      </form>
+    </dialog>
+
+    <dialog class="modal modal--flags" aria-label="Изменить флаг вручную" data-modal-flags>
+      <div class="modal__form">
+        <h4 class="modal__title">Изменить флаг вручную</h4>
+
+        <div class="modal__wrapper">
+          <div class="modal__field">
+            <label class="modal__label" for="search-country">Название или код страны в ISO-3166</label>
+            <input class="modal__input" id="search-country" type="search" autocomplete="off" placeholder=" ">
+          </div>
+        </div>
+
+        <ul class="modal__flag-grid">
+          <li>
+            <button type="button" data-code="ch">
+              <svg class="modal__icon" aria-hidden="true">
+                <use href="/sprites.svg#flag-ch"></use>
+              </svg>
+              <span>Lorem ipsum dolor sit amet</span>
+            </button>
+          </li>
+
+          <li>
+            <button type="button" data-code="ad">
+              <svg class="modal__icon" aria-hidden="true">
+                <use href="/sprites.svg#flag-ad"></use>
+              </svg>
+              <span>Lorem ipsum dolor sit amet</span>
+            </button>
+          </li>
+
+          <li>
+            <button type="button" data-code="ru">
+              <svg class="modal__icon" aria-hidden="true">
+                <use href="/sprites.svg#flag-ru"></use>
+              </svg>
+              <span>Lorem ipsum dolor sit amet</span>
+            </button>
+          </li>
+
+          <li>
+            <button type="button" data-code="ae">
+              <svg class="modal__icon" aria-hidden="true">
+                <use href="/sprites.svg#flag-ae"></use>
+              </svg>
+              <span>Lorem ipsum dolor sit amet</span>
+            </button>
+          </li>
+
+          <li>
+            <button type="button" data-code="af">
+              <svg class="modal__icon" aria-hidden="true">
+                <use href="/sprites.svg#flag-af"></use>
+              </svg>
+              <span>Lorem ipsum dolor sit amet</span>
+            </button>
+          </li>
+
+          <li>
+            <button type="button" data-code="ch">
+              <svg class="modal__icon" aria-hidden="true">
+                <use href="/sprites.svg#flag-ch"></use>
+              </svg>
+              <span>Lorem ipsum dolor sit amet</span>
+            </button>
+          </li>
+
+          <li>
+            <button type="button" data-code="ad">
+              <svg class="modal__icon" aria-hidden="true">
+                <use href="/sprites.svg#flag-ad"></use>
+              </svg>
+              <span>Lorem ipsum dolor sit amet</span>
+            </button>
+          </li>
+
+          <li>
+            <button type="button" data-code="ru">
+              <svg class="modal__icon" aria-hidden="true">
+                <use href="/sprites.svg#flag-ru"></use>
+              </svg>
+              <span>Lorem ipsum dolor sit amet</span>
+            </button>
+          </li>
+
+          <li>
+            <button type="button" data-code="ae">
+              <svg class="modal__icon" aria-hidden="true">
+                <use href="/sprites.svg#flag-ae"></use>
+              </svg>
+              <span>Lorem ipsum dolor sit amet</span>
+            </button>
+          </li>
+
+          <li>
+            <button type="button" data-code="af">
+              <svg class="modal__icon" aria-hidden="true">
+                <use href="/sprites.svg#flag-af"></use>
+              </svg>
+              <span>Lorem ipsum dolor sit amet</span>
+            </button>
+          </li>
+
+          <li>
+            <button type="button" data-code="ch">
+              <svg class="modal__icon" aria-hidden="true">
+                <use href="/sprites.svg#flag-ch"></use>
+              </svg>
+              <span>Lorem ipsum dolor sit amet</span>
+            </button>
+          </li>
+
+          <li>
+            <button type="button" data-code="ad">
+              <svg class="modal__icon" aria-hidden="true">
+                <use href="/sprites.svg#flag-ad"></use>
+              </svg>
+              <span>Lorem ipsum dolor sit amet</span>
+            </button>
+          </li>
+
+          <li>
+            <button type="button" data-code="ru">
+              <svg class="modal__icon" aria-hidden="true">
+                <use href="/sprites.svg#flag-ru"></use>
+              </svg>
+              <span>Lorem ipsum dolor sit amet</span>
+            </button>
+          </li>
+
+          <li>
+            <button type="button" data-code="ae">
+              <svg class="modal__icon" aria-hidden="true">
+                <use href="/sprites.svg#flag-ae"></use>
+              </svg>
+              <span>Lorem ipsum dolor sit amet</span>
+            </button>
+          </li>
+
+          <li>
+            <button type="button" data-code="af">
+              <svg class="modal__icon" aria-hidden="true">
+                <use href="/sprites.svg#flag-af"></use>
+              </svg>
+              <span>Lorem ipsum dolor sit amet</span>
+            </button>
+          </li>
+
+          <li>
+            <button type="button" data-code="ch">
+              <svg class="modal__icon" aria-hidden="true">
+                <use href="/sprites.svg#flag-ch"></use>
+              </svg>
+              <span>Lorem ipsum dolor sit amet</span>
+            </button>
+          </li>
+
+          <li>
+            <button type="button" data-code="ad">
+              <svg class="modal__icon" aria-hidden="true">
+                <use href="/sprites.svg#flag-ad"></use>
+              </svg>
+              <span>Lorem ipsum dolor sit amet</span>
+            </button>
+          </li>
+
+          <li>
+            <button type="button" data-code="ru">
+              <svg class="modal__icon" aria-hidden="true">
+                <use href="/sprites.svg#flag-ru"></use>
+              </svg>
+              <span>Lorem ipsum dolor sit amet</span>
+            </button>
+          </li>
+        </ul>
+
+        <div class="modal__actions">
+          <button class="modal__button modal__button--cancel" type="button" data-modal-close>Закрыть</button>
+        </div>
+      </div>
+    </dialog>
   </main>
 </body>
 
