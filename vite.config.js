@@ -1,4 +1,5 @@
 import { defineConfig } from 'vite'
+import autoprefixer from 'autoprefixer'
 import { fileURLToPath, URL } from 'node:url'
 
 export default defineConfig({
@@ -22,6 +23,10 @@ export default defineConfig({
                 api: 'modern-compiler',
                 additionalData: `@use "@styles/helpers" as *;`,
             },
+        },
+
+        postcss: {
+            plugins:[autoprefixer()],
         },
     },
 
