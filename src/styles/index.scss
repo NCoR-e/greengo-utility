@@ -325,67 +325,6 @@ body {
         }
       }
 
-      &--flags {
-        .modal__flag-grid {
-          display: grid;
-          grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
-          max-height: 50vh;
-          overflow-y: auto;
-          padding: rem(5);
-          gap: rem(10);
-          list-style: none;
-          scroll-behavior: smooth;
-
-          @supports selector(::-webkit-scrollbar) {
-            scrollbar-width: auto;
-            scrollbar-color: auto;
-
-            &::-webkit-scrollbar {
-              width: rem(8);
-            }
-
-            &::-webkit-scrollbar-track {
-              background: transparent;
-            }
-
-            &::-webkit-scrollbar-thumb {
-              background: $darkBlue-1E-100;
-              border-radius: rem(4);
-            }
-
-            &::-webkit-scrollbar-button {
-              display: none;
-            }
-          }
-
-          button {
-            @include fluid-text($default-font, $very-small-font);
-            display: grid;
-            justify-items: center;
-            gap: rem(5);
-            width: 100%;
-            padding: rem(8);
-            border: none;
-            border-radius: fluid(8, 4);
-            color: $aqua-6B-100;
-            background: transparent;
-            outline: 0;
-            cursor: pointer;
-
-            &:focus,
-            &:hover {
-              background-color: $darkBlue-1E-100;
-              transition: $transition-04s;
-            }
-
-            svg {
-              width: rem(32);
-              height: rem(18);
-            }
-          }
-        }
-      }
-
       &__form {
         display: grid;
         gap: fluid(35, 25);
@@ -478,6 +417,133 @@ body {
         &:hover {
           background-color: $white-D9-015;
           transition: $transition-04s;
+        }
+      }
+
+      &--flags {
+        width: min(520px, 92vw);
+
+        .modal__title {
+          padding-bottom: rem(20);
+        }
+
+        .modal__form {
+          display: grid;
+          gap: rem(15);
+          overflow: hidden;
+          padding: rem(20);
+        }
+
+        .modal__caption {
+          @include fluid-text($very-small-font, $small-font);
+          color: $aqua-6B-100;
+          margin: 0;
+        }
+
+        .modal__flag-grid {
+          display: grid;
+          gap: rem(15);
+          max-height: 45vh;
+          overflow-y: auto;
+          padding: rem(5);
+          list-style: none;
+          scroll-behavior: smooth;
+          overscroll-behavior: contain;
+
+          &:focus-visible {
+            outline: rem(2) solid $blue-4C-100;
+            outline-offset: rem(1);
+            border-radius: rem(7);
+          }
+
+          @supports selector(::-webkit-scrollbar) {
+            scrollbar-width: auto;
+            scrollbar-color: auto;
+
+            &::-webkit-scrollbar {
+              width: rem(8);
+            }
+
+            &::-webkit-scrollbar-track {
+              background: transparent;
+            }
+
+            &::-webkit-scrollbar-thumb {
+              background: $darkBlue-1E-100;
+              border-radius: rem(4);
+            }
+
+            &::-webkit-scrollbar-button {
+              display: none;
+            }
+          }
+        }
+
+        .flag-group {
+          content-visibility: auto;
+          contain-intrinsic-size: auto rem(140);
+
+          &:focus-visible {
+            outline: rem(2) solid $blue-4C-100;
+            outline-offset: rem(1);
+            border-radius: rem(7);
+          }
+
+          &__letter {
+            @include flex(inline-flex, center, center);
+            @include fluid-text($default-font, $small-font);
+            @include border-pack(rem(1), solid, $darkBlue-2C-100);
+            background-color: $darkBlue-1E-100;
+            border-radius: rem(4);
+            top: 0;
+            z-index: 1;
+            position: sticky;
+            width: fluid(24, 20);
+            height: fluid(24, 20);
+            font-weight: 400;
+            padding: rem(4);
+          }
+
+          &__list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            list-style: none;
+            margin-top: rem(15);
+            gap: rem(8);
+          }
+
+          &__button {
+            @include fluid-text($default-font, $very-small-font);
+            display: grid;
+            justify-items: center;
+            gap: rem(5);
+            width: 100%;
+            padding: rem(8);
+            border: none;
+            border-radius: fluid(8, 4);
+            color: $aqua-6B-100;
+            background: transparent;
+            outline: 0;
+            cursor: pointer;
+
+            &:focus,
+            &:hover {
+              background-color: $darkBlue-1E-100;
+              transition: $transition-04s;
+            }
+
+            svg {
+              width: rem(32);
+              height: rem(18);
+            }
+          }
+
+          &__name {
+            @include fluid-text($default-font, $very-small-font);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: wrap;
+          }
         }
       }
     }
