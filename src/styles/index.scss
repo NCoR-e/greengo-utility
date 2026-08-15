@@ -42,9 +42,11 @@ body {
 
       &__card-list {
         display: grid;
-        grid-template-columns: repeat(3, 1fr);
-
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        justify-content: center;
+        align-items: center;
         padding-bottom: rem(80);
+        max-width: rem(3120);
         gap: rem(35);
 
         @include mobile-above {
@@ -53,11 +55,6 @@ body {
         }
 
         @include tablet-above {
-          display: flex;
-          flex-direction: column;
-        }
-
-        @include laptop-above {
           display: flex;
           flex-direction: column;
         }
