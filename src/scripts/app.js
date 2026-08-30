@@ -63,6 +63,29 @@ function fabricCard(data, rootEl) {
     return cardElement;
 }
 
+function toggleModal(rootEl) {
+    rootEl.addEventListener('click', (e) => {
+        let targetCard = e.target.closest('[data-card-type]');
+
+        if (e.target.dataset.modalOpen) {
+            let modalKey = e.target.getAttribute('data-modal-open');
+            let settingMenu = targetCard.querySelector('[data-card="open-setting"]');
+
+            modalList.forEach(element => {
+                if (modalKey === element.dataset.modal) {
+                    let closeButton = element.querySelector('[data-modal="close"]');
+
+                    element.showModal();
+                    settingMenu.removeAttribute('open');
+                    closeButton.addEventListener('click', () => {
+                        element.close();
+                    })
+                } return;
+            })
+        }
+    })
+}
+
 function renderingView(data) {
     data.forEach(element => {
         const card = fabricCard(element, rootSection);
@@ -82,6 +105,7 @@ function initApp() {
 
     activeState = state;
     renderingView(activeState);
+    toggleModal(rootSection);
 }
 
 initApp();
