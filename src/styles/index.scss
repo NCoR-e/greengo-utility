@@ -311,6 +311,13 @@ body {
       height: max-content;
       color: $white-D7-100;
       background-color: $darkBlue-10-100;
+      opacity: 0;
+      transform: translateY(rem(250));
+      transition:
+        opacity $transition-04s ease,
+        transform $transition-04s ease,
+        overlay $transition-04s ease allow-discrete,
+        display $transition-04s ease allow-discrete;
 
       &[open] {
         opacity: 1;
@@ -318,7 +325,11 @@ body {
 
         @starting-style {
           opacity: 0;
-          transform: translateY(12px);
+          transform: translateY(rem(250));
+        }
+
+        &::backdrop {
+          background-color: $black-00-040;
         }
       }
 
