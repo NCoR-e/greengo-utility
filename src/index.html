@@ -6,181 +6,105 @@
   <meta name="author" content="NCoRe">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" sizes="512x512 256x256 128x128 64x64 32x32" href="/tab.ico">
-  <script type="module" src="/scripts/app.js"></script>
+  <script type="module" src="/scripts/App.js"></script>
   <title>Greengo Utility</title>
 </head>
 
 <body>
-  <main>
+  <main data-root>
     <section class="branch">
       <header class="header">
         <h1 class="header__title">Greengo Utility</h1>
         <h2 class="header__sub-title">Выберите узел, чтобы открыть 3x-ui панель</h2>
       </header>
 
-      <div class="branch__card-list">
-        <article class="branch__card card card--main" tabindex="0" data-card-type="main">
-          <div class="card__header">
-            <div class="card__title">
-              <h3 class="card__country-code">CH Швейцария</h3>
+      <div class="branch__card-list" data-card-list>
+        <template data-template-card="main">
+          <article class="branch__card card card--main" tabindex="0" data-card-type="main">
+            <div class="card__header">
+              <div class="card__title">
+                <h3 class="card__country-code" data-info="title">
+                </h3>
+              </div>
+
+              <svg class="card__icon" aria-hidden="true">
+                <use href="#" data-info="icon"></use>
+              </svg>
             </div>
 
-            <svg class="card__icon" aria-hidden="true">
-              <use href="/sprites.svg#flag-ch"></use>
-            </svg>
-          </div>
+            <div class="card__body">
+              <div class="card__meta">
+                <span class="card__meta-item"><b data-info="host">Хост:</b></span>
+                <span class="card__meta-item"><b data-info="port">Порт:</b> </span>
+              </div>
 
-          <div class="card__body">
-            <div class="card__meta">
-              <span class="card__meta-item" data-field="host"><b>Хост:</b> ###.###.###.###</span>
-              <span class="card__meta-item" data-field="port"><b>Порт:</b> #####</span>
+              <a class="card__open-btn" href="#" target="_blank" data-button="redirect-panel">Открыть панель</a>
             </div>
 
-            <a class="card__open-btn" href="#" target="_blank">Открыть панель</a>
-          </div>
+            <footer class="card__footer">
+              <details class="card__setting setting" data-card="open-setting">
+                <summary class="setting__header" aria-label="Меню редактирования карточки">
+                  <svg class="setting__icon setting__icon--menu" aria-hidden="true">
+                    <use href="/sprites.svg#menu-ico"></use>
+                  </svg>
 
-          <footer class="card__footer">
-            <details class="card__setting setting">
-              <summary class="setting__header" aria-label="Меню редактирования карточки">
-                <svg class="setting__icon setting__icon--menu" aria-hidden="true">
-                  <use href="/sprites.svg#menu-ico"></use>
-                </svg>
+                  <svg class="setting__icon setting__icon--close" aria-hidden="true">
+                    <use href="/sprites.svg#close-ico"></use>
+                  </svg>
+                </summary>
 
-                <svg class="setting__icon setting__icon--close" aria-hidden="true">
-                  <use href="/sprites.svg#close-ico"></use>
-                </svg>
-              </summary>
+                <ul class="setting__list" aria-label="Список кнопок для редактирования">
+                  <li><button type="button" data-modal-open="edit-auto">Изменить автоматически</button></li>
+                  <li><button type="button" data-modal-open="edit-manual">Изменить вручную</button></li>
+                  <li><button type="button" data-modal-open="edit-flag">Изменить флаг</button></li>
+                </ul>
+              </details>
+            </footer>
+          </article>
+        </template>
 
-              <ul class="setting__list" aria-label="Список кнопок для редактирования">
-                <li><button type="button" data-action="auto">Изменить автоматически</button></li>
-                <li><button type="button" data-action="manual">Изменить вручную</button></li>
-                <li><button type="button" data-action="flag">Изменить флаг</button></li>
-              </ul>
-            </details>
-          </footer>
-        </article>
-
-        <article class="branch__card card card--main" tabindex="0" data-card-type="main">
-          <div class="card__header">
-            <div class="card__title">
-              <h3 class="card__country-code">SE Швеция</h3>
-            </div>
-
-            <svg class="card__icon" aria-hidden="true">
-              <use href="/sprites.svg#flag-se"></use>
-            </svg>
-          </div>
-
-          <div class="card__body">
-            <div class="card__meta">
-              <span class="card__meta-item" data-field="host"><b>Хост:</b> ###.###.###.###</span>
-              <span class="card__meta-item" data-field="port"><b>Порт:</b> #####</span>
-            </div>
-
-            <a class="card__open-btn" href="#" target="_blank">Открыть панель</a>
-          </div>
-
-          <footer class="card__footer">
-            <details class="card__setting setting">
-              <summary class="setting__header" aria-label="Меню редактирования карточки">
-                <svg class="setting__icon setting__icon--menu" aria-hidden="true">
-                  <use href="/sprites.svg#menu-ico"></use>
-                </svg>
-
-                <svg class="setting__icon setting__icon--close" aria-hidden="true">
-                  <use href="/sprites.svg#close-ico"></use>
-                </svg>
-              </summary>
-
-              <ul class="setting__list">
-                <li><button type="button" data-action="auto">Изменить автоматически</button></li>
-                <li><button type="button" data-action="manual">Изменить вручную</button></li>
-                <li><button type="button" data-action="flag">Изменить флаг</button></li>
-              </ul>
-            </details>
-          </footer>
-        </article>
-
-        <article class="branch__card card card--main" tabindex="0" data-card-type="main">
-          <div class="card__header">
-            <div class="card__title">
-              <h3 class="card__country-code">US США</h3>
-            </div>
-
-            <svg class="card__icon" aria-hidden="true">
-              <use href="/sprites.svg#flag-us"></use>
-            </svg>
-          </div>
-
-          <div class="card__body">
-            <div class="card__meta">
-              <span class="card__meta-item" data-field="host"><b>Хост:</b> ###.###.###.###</span>
-              <span class="card__meta-item" data-field="port"><b>Порт:</b> #####</span>
-            </div>
-
-            <a class="card__open-btn" href="#" target="_blank">Открыть панель</a>
-          </div>
-
-          <footer class="card__footer">
-            <details class="card__setting setting" aria-label="Меню редактирования карточки">
-              <summary class="setting__header">
-                <svg class="setting__icon setting__icon--menu" aria-hidden="true">
-                  <use href="/sprites.svg#menu-ico"></use>
-                </svg>
-
-                <svg class="setting__icon setting__icon--close" aria-hidden="true">
-                  <use href="/sprites.svg#close-ico"></use>
-                </svg>
-              </summary>
-
-              <ul class="setting__list">
-                <li><button type="button" data-action="auto">Изменить автоматически</button></li>
-                <li><button type="button" data-action="manual">Изменить вручную</button></li>
-                <li><button type="button" data-action="flag">Изменить флаг</button></li>
-              </ul>
-            </details>
-          </footer>
-        </article>
-
-        <article class="branch__card card card--test" tabindex="0" data-card-type="test">
-          <div class="card__header">
-            <div class="card__title">
-              <h3 class="card__country-code">CH Тестовая Швейцария</h3>
-              <div class="card__description">
-                <svg class="card__icon" aria-hidden="true">
-                  <use href="/sprites.svg#flag-ch"></use>
-                </svg>
+        <template data-template-card="test">
+          <article class="branch__card card card--test" tabindex="0" data-card-type="test">
+            <div class="card__header">
+              <div class="card__title">
+                <h3 class="card__country-code" data-info="title">
+                </h3>
+                <div class="card__description">
+                  <svg class="card__icon" aria-hidden="true">
+                    <use href="#" data-info="icon"></use>
+                  </svg>
+                </div>
               </div>
             </div>
-          </div>
 
-          <div class="card__body">
-            <a class="card__open-btn" href="#" target="_blank">Открыть панель</a>
-          </div>
+            <div class="card__body">
+              <a class="card__open-btn" href="#" target="_blank" data-button="redirect-panel">Открыть панель</a>
+            </div>
 
-          <footer class="card__footer">
-            <details class="card__setting setting" aria-label="Меню редактирования карточки">
-              <summary class="setting__header">
-                <svg class="setting__icon setting__icon--menu" aria-hidden="true">
-                  <use href="/sprites.svg#menu-ico"></use>
-                </svg>
+            <footer class="card__footer">
+              <details class="card__setting setting" aria-label="Меню редактирования карточки" data-card="open-setting">
+                <summary class="setting__header">
+                  <svg class="setting__icon setting__icon--menu" aria-hidden="true">
+                    <use href="/sprites.svg#menu-ico"></use>
+                  </svg>
 
-                <svg class="setting__icon setting__icon--close" aria-hidden="true">
-                  <use href="/sprites.svg#close-ico"></use>
-                </svg>
-              </summary>
+                  <svg class="setting__icon setting__icon--close" aria-hidden="true">
+                    <use href="/sprites.svg#close-ico"></use>
+                  </svg>
+                </summary>
 
-              <ul class="setting__list">
-                <li><button type="button" data-action="title">Изменить заголовок</button></li>
-                <li><button type="button" data-action="flag">Изменить флаг</button></li>
-              </ul>
-            </details>
-          </footer>
-        </article>
+                <ul class="setting__list">
+                  <li><button type="button" data-modal-open="edit-title">Изменить заголовок</button></li>
+                  <li><button type="button" data-modal-open="edit-flag">Изменить флаг</button></li>
+                </ul>
+              </details>
+            </footer>
+          </article>
+        </template>
       </div>
     </section>
 
-    <dialog class="modal modal--auto" aria-label="Изменить данные автоматически" data-modal="auto">
+    <dialog class="modal modal--auto" aria-label="Изменить данные автоматически" data-modal="edit-auto">
       <form class="modal__form" method="dialog">
         <h4 class="modal__title">Изменить данные автоматически</h4>
 
@@ -192,13 +116,13 @@
         </div>
 
         <div class="modal__actions">
-          <button class="modal__button modal__button--cancel" type="button" data-button="modal-close">Закрыть</button>
-          <button class="modal__button modal__button--confirm" type="submit" data-button="modal-confirm">Сохранить</button>
+          <button class="modal__button modal__button--cancel" type="button" data-modal="close">Закрыть</button>
+          <button class="modal__button modal__button--confirm" type="submit" data-modal="confirm">Сохранить</button>
         </div>
       </form>
     </dialog>
 
-    <dialog class="modal modal--manual" aria-label="Изменить данные вручную" data-modal="manual">
+    <dialog class="modal modal--manual" aria-label="Изменить данные вручную" data-modal="edit-manual">
       <form class="modal__form" method="dialog">
         <h4 class="modal__title">Изменить данные вручную</h4>
 
@@ -225,13 +149,13 @@
         </div>
 
         <div class="modal__actions">
-          <button class="modal__button modal__button--cancel" type="button" data-button="modal-close">Закрыть</button>
-          <button class="modal__button modal__button--confirm" type="submit" data-button="modal-confirm">Сохранить</button>
+          <button class="modal__button modal__button--cancel" type="button" data-modal="close">Закрыть</button>
+          <button class="modal__button modal__button--confirm" type="submit" data-modal="confirm">Сохранить</button>
         </div>
       </form>
     </dialog>
 
-    <dialog class="modal modal--rename" aria-label="Изменить заголовок" data-modal="rename">
+    <dialog class="modal modal--rename" aria-label="Изменить заголовок" data-modal="edit-title">
       <form class="modal__form" method="dialog">
         <h4 class="modal__title">Изменить заголовок</h4>
 
@@ -248,13 +172,13 @@
         </div>
 
         <div class="modal__actions">
-          <button class="modal__button modal__button--cancel" type="button" data-button="modal-close">Закрыть</button>
-          <button class="modal__button modal__button--confirm" type="submit" data-button="modal-confirm">Сохранить</button>
+          <button class="modal__button modal__button--cancel" type="button" data-modal="close">Закрыть</button>
+          <button class="modal__button modal__button--confirm" type="submit" data-modal="confirm">Сохранить</button>
         </div>
       </form>
     </dialog>
 
-    <dialog class="modal modal--flags" aria-label="Изменить флаг вручную" data-modal="flag" open>
+    <dialog class="modal modal--flags" aria-label="Изменить флаг вручную" data-modal="edit-flag">
       <div class="modal__form">
         <h4 class="modal__title">Изменить флаг вручную</h4>
 
@@ -267,13 +191,13 @@
 
         <p class="modal__caption" id="flag-list-caption">Выбрать вручную (A-Z)</p>
 
-        <div class="modal__flag-grid" role="region" tabindex="0" aria-labelledby="flag-list-caption" data-flag-grid>
+        <div class="modal__flag-grid" role="region" tabindex="0" aria-labelledby="flag-list-caption">
           <section class="flag-group" role="region" tabindex="0" aria-label="Страны на букву: A">
             <span class="flag-group__letter" aria-hidden="true">А</span>
 
             <ul class="flag-group__list">
               <li class="flag-group__item">
-                <button class="flag-group__button" type="button" data-name="#" data-code="#">
+                <button class="flag-group__button" type="button" data-flag="#">
                   <svg class="flag-group__icon" aria-hidden="true">
                     <use href="/sprites.svg#flag-ad"></use>
                   </svg>
@@ -282,7 +206,7 @@
               </li>
 
               <li class="flag-group__item">
-                <button class="flag-group__button" type="button" data-name="#" data-code="#">
+                <button class="flag-group__button" type="button" data-flag="#">
                   <svg class="flag-group__icon" aria-hidden="true">
                     <use href="/sprites.svg#flag-ae"></use>
                   </svg>
@@ -291,7 +215,7 @@
               </li>
 
               <li class="flag-group__item">
-                <button class="flag-group__button" type="button" data-name="#" data-code="#">
+                <button class="flag-group__button" type="button" data-flag="#">
                   <svg class="flag-group__icon" aria-hidden="true">
                     <use href="/sprites.svg#flag-af"></use>
                   </svg>
@@ -300,7 +224,7 @@
               </li>
 
               <li class="flag-group__item">
-                <button class="flag-group__button" type="button" data-name="#" data-code="#">
+                <button class="flag-group__button" type="button" data-flag="#">
                   <svg class="flag-group__icon" aria-hidden="true">
                     <use href="/sprites.svg#flag-ag"></use>
                   </svg>
@@ -312,7 +236,7 @@
         </div>
 
         <div class="modal__actions">
-          <button class="modal__button modal__button--cancel" type="button" data-button="close">Закрыть</button>
+          <button class="modal__button modal__button--cancel" type="button" data-modal="close">Закрыть</button>
         </div>
       </div>
     </dialog>
