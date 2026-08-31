@@ -48,7 +48,7 @@ function fabricCard(data, rootEl) {
 
     if (titleCard && iconCard && x3PanelCard) {
         titleCard.textContent = `${data.countryCode.toUpperCase()} ${data.countryName}`;
-        iconCard.setAttribute('href', `/sprites.svg#flag-${data.countryCode}`);
+        iconCard.setAttribute('href', `./sprites.svg#flag-${data.countryCode.toLowerCase()}`);
         x3PanelCard.setAttribute('href', data.panelLink);
     }
 
