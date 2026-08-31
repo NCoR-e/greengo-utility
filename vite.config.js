@@ -4,8 +4,8 @@ import { fileURLToPath, URL } from 'node:url'
 
 export default defineConfig({
     root: 'src',
-    publicDir: '../public',
-    base: process.env.GITHUB_PAGES ? 'greengo-utility' : '/',
+    publicDir: './public',
+    base: process.env.GITHUB_PAGES ? '/greengo-utility' : '/',
 
     resolve: {
         alias: {
